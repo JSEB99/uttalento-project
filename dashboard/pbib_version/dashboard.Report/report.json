@@ -1,0 +1,205 @@
+{
+  "config": "{\"version\":\"5.51\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU02\",\"version\":\"5.51\",\"type\":2},\"customTheme\":{\"name\":\"AccessibleDefault\",\"version\":\"5.51\",\"type\":2}},\"activeSectionIndex\":1,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "AccessibleDefault",
+            "path": "BuiltInThemes/AccessibleDefault.json",
+            "type": 201
+          },
+          {
+            "name": "CY24SU02",
+            "path": "BaseThemes/CY24SU02.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    },
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "datos_abiertos_logo3455430671715354.png",
+            "path": "datos_abiertos_logo3455430671715354.png",
+            "type": 100
+          },
+          {
+            "name": "uttalento_logo862397575325783.png",
+            "path": "uttalento_logo862397575325783.png",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Página 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1ffc31c4b25c672dbdd4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":645.8257477243172,\"y\":116.5149544863459,\"z\":6000,\"width\":244.6814044213264,\"height\":119.84395318595578,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"data_clean.ProblemasLaborales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"data_clean\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ProblemasLaborales\"},\"Name\":\"data_clean.ProblemasLaborales\",\"NativeReferenceName\":\"ProblemasLaborales\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ProblemasLaborales\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 119.84,
+          "width": 244.68,
+          "x": 645.83,
+          "y": 116.51,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"37dce6144bf37f1520c3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":940,\"y\":117.5,\"z\":7000,\"width\":247.5,\"height\":120,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"data_clean.ProblemasEconomicos\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"data_clean\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ProblemasEconomicos\"},\"Name\":\"data_clean.ProblemasEconomicos\",\"NativeReferenceName\":\"ProblemasEconomicos\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ProblemasEconomicos\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 120.00,
+          "width": 247.50,
+          "x": 940.00,
+          "y": 117.50,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"4f3d470628f0216abd28\",\"layouts\":[{\"id\":0,\"position\":{\"x\":316.25487646293885,\"y\":116.5149544863459,\"z\":5000,\"width\":243.01690507152145,\"height\":119.84395318595578,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"data_clean.ProblemasJuridicos\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"data_clean\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ProblemasJuridicos\"},\"Name\":\"data_clean.ProblemasJuridicos\",\"NativeReferenceName\":\"ProblemasJuridicos\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ProblemasJuridicos\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 119.84,
+          "width": 243.02,
+          "x": 316.25,
+          "y": 116.51,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"8209f094f78655db2538\",\"layouts\":[{\"id\":0,\"position\":{\"x\":257.5,\"y\":2.5,\"z\":8000,\"width\":775,\"height\":115,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"ESTADISTICAS DE INTENTOS DE SUICIDIO EN TUNJA DESDE EL AÑO 2020\",\"textStyle\":{\"fontFamily\":\"Calibri\",\"fontSize\":\"28pt\"}}],\"horizontalTextAlignment\":\"center\"}]}}]}}}",
+          "filters": "[]",
+          "height": 115.00,
+          "width": 775.00,
+          "x": 257.50,
+          "y": 2.50,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"8f379b00e6577e7bcaf3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.986996098829648,\"y\":464.39531859557866,\"z\":0,\"width\":1270.0130039011704,\"height\":254.66840052015604,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"data_clean.fecha_del_hecho.Variación.Jerarquía de fechas.Año\",\"active\":true},{\"queryRef\":\"data_clean.fecha_del_hecho.Variación.Jerarquía de fechas.Trimestre\"},{\"queryRef\":\"data_clean.fecha_del_hecho.Variación.Jerarquía de fechas.Mes\"},{\"queryRef\":\"data_clean.fecha_del_hecho.Variación.Jerarquía de fechas.Día\"}],\"Y\":[{\"queryRef\":\"Sum(data_clean.numero_de_intentos)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"data_clean\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variación\",\"Property\":\"fecha_del_hecho\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Año\"},\"Name\":\"data_clean.fecha_del_hecho.Variación.Jerarquía de fechas.Año\",\"NativeReferenceName\":\"fecha_del_hecho Año\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variación\",\"Property\":\"fecha_del_hecho\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Trimestre\"},\"Name\":\"data_clean.fecha_del_hecho.Variación.Jerarquía de fechas.Trimestre\",\"NativeReferenceName\":\"fecha_del_hecho Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variación\",\"Property\":\"fecha_del_hecho\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"data_clean.fecha_del_hecho.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"fecha_del_hecho Mes\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variación\",\"Property\":\"fecha_del_hecho\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Día\"},\"Name\":\"data_clean.fecha_del_hecho.Variación.Jerarquía de fechas.Día\",\"NativeReferenceName\":\"fecha_del_hecho Día\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"numero_de_intentos\"}},\"Function\":0},\"Name\":\"Sum(data_clean.numero_de_intentos)\",\"NativeReferenceName\":\"Suma de numero_de_intentos\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 254.67,
+          "width": 1270.01,
+          "x": 9.99,
+          "y": 464.40,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"90d23206768a868802d7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":848.8946684005201,\"y\":266.3198959687906,\"z\":3000,\"width\":431.1053315994798,\"height\":198.07542262678803,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(data_clean.estrato_socioeconomico)\"}],\"Category\":[{\"queryRef\":\"data_clean.estrato_socioeconomico\",\"active\":true}],\"Series\":[{\"queryRef\":\"data_clean.sexo\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"data_clean\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"estrato_socioeconomico\"}},\"Function\":0},\"Name\":\"Sum(data_clean.estrato_socioeconomico)\",\"NativeReferenceName\":\"Suma de estrato_socioeconomico\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"estrato_socioeconomico\"},\"Name\":\"data_clean.estrato_socioeconomico\",\"NativeReferenceName\":\"estrato_socioeconomico\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"sexo\"},\"Name\":\"data_clean.sexo\",\"NativeReferenceName\":\"sexo\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"estrato_socioeconomico\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 198.08,
+          "width": 431.11,
+          "x": 848.89,
+          "y": 266.32,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"a7e1fbc3585f4df2b865\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.986996098829648,\"y\":266.3198959687906,\"z\":1000,\"width\":389.4928478543563,\"height\":198.07542262678803,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"data_clean.sexo\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(data_clean.sexo)\"}],\"Series\":[{\"queryRef\":\"data_clean.intentos_previos\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"data_clean\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"sexo\"},\"Name\":\"data_clean.sexo\",\"NativeReferenceName\":\"sexo\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"sexo\"}},\"Function\":5},\"Name\":\"CountNonNull(data_clean.sexo)\",\"NativeReferenceName\":\"Recuento de sexo\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"intentos_previos\"},\"Name\":\"data_clean.intentos_previos\",\"NativeReferenceName\":\"intentos_previos\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"sexo\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 198.08,
+          "width": 389.49,
+          "x": 9.99,
+          "y": 266.32,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"dc836977d034a6cfe613\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":118.17945383615084,\"z\":4000,\"width\":244.6814044213264,\"height\":118.17945383615084,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"data_clean.ProblemasFamiliares\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"data_clean\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ProblemasFamiliares\"},\"Name\":\"data_clean.ProblemasFamiliares\",\"NativeReferenceName\":\"ProblemasFamiliares\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"ProblemasFamiliares\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 118.18,
+          "width": 244.68,
+          "x": 0.00,
+          "y": 118.18,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"e7ef0326c82c609787ff\",\"layouts\":[{\"id\":0,\"position\":{\"x\":426.111833550065,\"y\":266.3198959687906,\"z\":2000,\"width\":389.4928478543563,\"height\":198.07542262678803,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"data_clean.escolaridad\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(data_clean.escolaridad)\"}],\"Series\":[{\"queryRef\":\"data_clean.sexo\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"data_clean\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"escolaridad\"},\"Name\":\"data_clean.escolaridad\",\"NativeReferenceName\":\"escolaridad\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"escolaridad\"}},\"Function\":5},\"Name\":\"CountNonNull(data_clean.escolaridad)\",\"NativeReferenceName\":\"Recuento de escolaridad\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"sexo\"},\"Name\":\"data_clean.sexo\",\"NativeReferenceName\":\"sexo\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"escolaridad\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 198.08,
+          "width": 389.49,
+          "x": 426.11,
+          "y": 266.32,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"objects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#3364C7'\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}",
+      "displayName": "Portada",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 1080.00,
+      "name": "ReportSectionf8bb3b5277c0d77eebb2",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"09be26a60ce6a4593ccc\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1105.92,\"y\":19.44,\"z\":1002,\"width\":611.28,\"height\":60.48,\"tabOrder\":1002}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"PROYECTO FINAL: ANÁLISIS DE DATOS\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Calibri\",\"fontSize\":\"28pt\",\"color\":\"#ffffff\"}}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 60.48,
+          "width": 611.28,
+          "x": 1105.92,
+          "y": 19.44,
+          "z": 1002.00
+        },
+        {
+          "config": "{\"name\":\"148cc9bfe6315fa58249\",\"layouts\":[{\"id\":0,\"position\":{\"x\":548.64,\"y\":0,\"z\":1001,\"width\":332.64,\"height\":99.36,\"tabOrder\":1001}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"uttalento_logo862397575325783.png\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 99.36,
+          "width": 332.64,
+          "x": 548.64,
+          "y": 0.00,
+          "z": 1001.00
+        },
+        {
+          "config": "{\"name\":\"30b1f559328cc67d58d0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":1000,\"width\":511.92,\"height\":99.36,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"image\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"imageUrl\":{\"expr\":{\"ResourcePackageItem\":{\"PackageName\":\"RegisteredResources\",\"PackageType\":1,\"ItemName\":\"datos_abiertos_logo3455430671715354.png\"}}}}}],\"imageScaling\":[{\"properties\":{\"imageScalingType\":{\"expr\":{\"Literal\":{\"Value\":\"'Normal'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 99.36,
+          "width": 511.92,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"8a79fd2e33a1d27015e1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":69.12,\"y\":451.44,\"z\":1004,\"width\":1777.68,\"height\":274.32,\"tabOrder\":1004}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Este proyecto tiene como propósito ofrecer un análisis detallado de los intentos de suicidio registrados en el municipio de Tunja, Boyacá. A través del estudio de datos demográficos, sociales y psicológicos, se busca identificar los factores de riesgo más frecuentes, visibilizar la magnitud del problema y aportar información valiosa que permita diseñar estrategias efectivas de prevención. La difusión responsable y clara de esta información busca sensibilizar a la comunidad y a las instituciones, fomentar la empatía, y contribuir a reducir el estigma que rodea la salud mental y el comportamiento suicida.\",\"textStyle\":{\"fontSize\":\"24pt\",\"color\":\"#ffffff\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 274.32,
+          "width": 1777.68,
+          "x": 69.12,
+          "y": 451.44,
+          "z": 1004.00
+        },
+        {
+          "config": "{\"name\":\"945d928218f01b079848\",\"layouts\":[{\"id\":0,\"position\":{\"x\":460.08,\"y\":179.28,\"z\":0,\"width\":997.92,\"height\":187.92,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"PERFIL  DEMOGRAFICO Y CONTEXTO SOCIAL SOBRE  LOS INTENTOS DE SUICIDIO EN LA CIUDAD DE TUNJA BOYACA\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontFamily\":\"Calibri\",\"fontSize\":\"36pt\",\"color\":\"#ffffff\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 187.92,
+          "width": 997.92,
+          "x": 460.08,
+          "y": 179.28,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"d688f0c90667eff87e99\",\"layouts\":[{\"id\":0,\"position\":{\"x\":635.04,\"y\":807.84,\"z\":1003,\"width\":645.84,\"height\":192.24,\"tabOrder\":1003}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Integrantes:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"28pt\",\"color\":\"#ffffff\"}}],\"horizontalTextAlignment\":\"center\"},{\"textRuns\":[{\"value\":\"Juan Sebastian Mora Tibamoso\",\"textStyle\":{\"fontSize\":\"20pt\",\"color\":\"#ffffff\"}}],\"horizontalTextAlignment\":\"center\",\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"asds\",\"textStyle\":{\"fontSize\":\"20pt\",\"color\":\"#ffffff\"}}],\"horizontalTextAlignment\":\"center\",\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"asdasd\",\"textStyle\":{\"fontSize\":\"20pt\",\"color\":\"#ffffff\"}}],\"horizontalTextAlignment\":\"center\",\"listType\":\"bullet\"}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 192.24,
+          "width": 645.84,
+          "x": 635.04,
+          "y": 807.84,
+          "z": 1003.00
+        }
+      ],
+      "width": 1920.00
+    }
+  ],
+  "theme": "AccessibleDefault"
+}

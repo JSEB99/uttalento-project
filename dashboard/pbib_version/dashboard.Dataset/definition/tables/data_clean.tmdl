@@ -1,0 +1,477 @@
+table data_clean
+	lineageTag: 406088c7-972a-469c-894b-2b048691489d
+
+	measure ProblemasFamiliares = CALCULATE(COUNTROWS(data_clean), data_clean[problemas_familiares] = TRUE())
+		formatString: 0
+		lineageTag: 2889a62c-4c02-40bc-bce3-4130d695296c
+
+	measure ProblemasJuridicos = CALCULATE(COUNTROWS(data_clean), data_clean[problemas_juridicos]=TRUE())
+		formatString: 0
+		lineageTag: 86d30b37-95fa-4199-aead-3e21b0dd1673
+
+	measure ProblemasLaborales = CALCULATE(COUNTROWS(data_clean), data_clean[problemas_laborales]=TRUE())
+		formatString: 0
+		lineageTag: a9e91be0-a343-4329-8601-125097b6dee6
+
+	measure ProblemasEconomicos = CALCULATE(COUNTROWS(data_clean), data_clean[problemas_economicos]=TRUE())
+		formatString: 0
+		lineageTag: d56bf834-de97-4295-82fa-31dd5e6083bc
+
+	column Column1
+		dataType: int64
+		formatString: 0
+		lineageTag: 65265cff-55f0-45e9-96b5-80f86d9d34e4
+		summarizeBy: sum
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column id_ano
+		dataType: int64
+		formatString: 0
+		lineageTag: cd64da0b-601d-4c15-be45-03d22e4fa180
+		summarizeBy: sum
+		sourceColumn: id_ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_de_notificacion_del
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 483e0829-8579-4ad9-8a75-dec2d8896b2d
+		summarizeBy: none
+		sourceColumn: fecha_de_notificacion_del
+
+		variation Variación
+			isDefault
+			relationship: 2b513b3d-3c16-4b4e-9d66-01253928bde0
+			defaultHierarchy: LocalDateTable_556bfa54-f6b5-4f9d-887a-0cf2f88be7e2.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column edad_de_la_victima
+		dataType: int64
+		formatString: 0
+		lineageTag: a1cbd5d4-02d9-4e12-a9da-4828f2c94020
+		summarizeBy: sum
+		sourceColumn: edad_de_la_victima
+
+		annotation SummarizationSetBy = Automatic
+
+	column unidad_de_medida_de_la_victima
+		dataType: string
+		lineageTag: 26cf7de1-6d8c-4e11-98c8-51555ae83b5e
+		summarizeBy: none
+		sourceColumn: unidad_de_medida_de_la_victima
+
+		annotation SummarizationSetBy = Automatic
+
+	column sexo
+		dataType: string
+		lineageTag: 0a63aeb4-d3e8-459d-9731-74405103e964
+		summarizeBy: none
+		sourceColumn: sexo
+
+		annotation SummarizationSetBy = Automatic
+
+	column area_de_residencia
+		dataType: string
+		lineageTag: 9327bc58-7252-4c04-9296-51dda3cdc99b
+		summarizeBy: none
+		sourceColumn: area_de_residencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column barrio_de_residencia
+		dataType: string
+		lineageTag: 1a29288b-85c3-41d4-b360-25372c785f30
+		summarizeBy: none
+		sourceColumn: barrio_de_residencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column seguridad_social
+		dataType: string
+		lineageTag: c9879452-1518-4700-bd68-2a3cc5fe7fbf
+		summarizeBy: none
+		sourceColumn: seguridad_social
+
+		annotation SummarizationSetBy = Automatic
+
+	column estrato_socioeconomico
+		dataType: int64
+		formatString: 0
+		lineageTag: 795f0877-2fac-41f3-bdec-b53d1135545b
+		summarizeBy: sum
+		sourceColumn: estrato_socioeconomico
+
+		annotation SummarizationSetBy = Automatic
+
+	column gestante
+		dataType: string
+		lineageTag: c5506960-c9c6-44fd-96d8-7dbd2c5b4bcf
+		summarizeBy: none
+		sourceColumn: gestante
+
+		annotation SummarizationSetBy = Automatic
+
+	column poblacion_a_cargo_icbf
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: be4d1243-7488-4544-a82d-22eae7b5d26e
+		summarizeBy: none
+		sourceColumn: poblacion_a_cargo_icbf
+
+		annotation SummarizationSetBy = Automatic
+
+	column fecha_del_hecho
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0b4f95ba-8d1a-4f25-aef8-05b0ae317c54
+		summarizeBy: none
+		sourceColumn: fecha_del_hecho
+
+		variation Variación
+			isDefault
+			relationship: c8efc252-0b0e-43eb-a6a1-be066734dc1b
+			defaultHierarchy: LocalDateTable_e030f96f-a5b8-465a-bc91-cff483573b40.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column intentos_previos
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 91184fc0-53ab-442f-98b0-db1fb8cca771
+		summarizeBy: none
+		sourceColumn: intentos_previos
+
+		annotation SummarizationSetBy = Automatic
+
+	column numero_de_intentos
+		dataType: int64
+		formatString: 0
+		lineageTag: aeb8740b-4503-4b80-823f-99ed7b415718
+		summarizeBy: sum
+		sourceColumn: numero_de_intentos
+
+		annotation SummarizationSetBy = Automatic
+
+	column estado_civil
+		dataType: string
+		lineageTag: 12cbb399-5b6a-4c34-9514-154ba49852f2
+		summarizeBy: none
+		sourceColumn: estado_civil
+
+		annotation SummarizationSetBy = Automatic
+
+	column escolaridad
+		dataType: string
+		lineageTag: db018255-131b-4816-9f03-22515ce2ffb6
+		summarizeBy: none
+		sourceColumn: escolaridad
+
+		annotation SummarizationSetBy = Automatic
+
+	column conflicto_con_pareja_o_ex
+		dataType: string
+		lineageTag: 2b8848d8-314b-45ae-a422-d9dec6de2948
+		summarizeBy: none
+		sourceColumn: conflicto_con_pareja_o_ex
+
+		annotation SummarizationSetBy = Automatic
+
+	column enfermedad_cronica_dolorosa
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 485e69b8-8eb3-499f-9939-25924fc63224
+		summarizeBy: none
+		sourceColumn: enfermedad_cronica_dolorosa
+
+		annotation SummarizationSetBy = Automatic
+
+	column problemas_economicos
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e0fb7e31-a973-4423-b859-ac4ac75946ee
+		summarizeBy: none
+		sourceColumn: problemas_economicos
+
+		annotation SummarizationSetBy = Automatic
+
+	column muerte_de_un_familiar
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 257ffffb-4f6a-4ad9-86d7-c7b85740dbb1
+		summarizeBy: none
+		sourceColumn: muerte_de_un_familiar
+
+		annotation SummarizationSetBy = Automatic
+
+	column escolar_educativa
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d7e75d40-3d06-4209-808e-b1cc668a6474
+		summarizeBy: none
+		sourceColumn: escolar_educativa
+
+		annotation SummarizationSetBy = Automatic
+
+	column problemas_juridicos
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c05eb81f-c4bc-4ead-9e46-7a670aa4974e
+		summarizeBy: none
+		sourceColumn: problemas_juridicos
+
+		annotation SummarizationSetBy = Automatic
+
+	column suicidio_de_un_familiar
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 63adfee7-a80f-47c5-92c1-14b20bdfb0aa
+		summarizeBy: none
+		sourceColumn: suicidio_de_un_familiar
+
+		annotation SummarizationSetBy = Automatic
+
+	column maltrato_fisico_sicologico
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d0df5626-61eb-4b3d-b999-d95bf7076f88
+		summarizeBy: none
+		sourceColumn: maltrato_fisico_sicologico
+
+		annotation SummarizationSetBy = Automatic
+
+	column problemas_laborales
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6b50b3cb-ef1a-4f93-86a8-2b8fa9933acc
+		summarizeBy: none
+		sourceColumn: problemas_laborales
+
+		annotation SummarizationSetBy = Automatic
+
+	column problemas_familiares
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1683e4c6-611f-4942-ad1b-318fceba25c6
+		summarizeBy: none
+		sourceColumn: problemas_familiares
+
+		annotation SummarizationSetBy = Automatic
+
+	column consumo_de_spa
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b75bea3b-9842-41e2-97c2-5053b42f4128
+		summarizeBy: none
+		sourceColumn: consumo_de_spa
+
+		annotation SummarizationSetBy = Automatic
+
+	column antecedentes_familiares_de
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5c62f04c-8a51-4474-aacd-1f5bbc6f8528
+		summarizeBy: none
+		sourceColumn: antecedentes_familiares_de
+
+		annotation SummarizationSetBy = Automatic
+
+	column ideacion_suicida_persistente
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4218df35-2dfc-4a30-a4a2-3d2c9d398c0c
+		summarizeBy: none
+		sourceColumn: ideacion_suicida_persistente
+
+		annotation SummarizationSetBy = Automatic
+
+	column plan_organizado_de_suicidio
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0f3b0d1c-bf60-4c20-bcf8-43a276e4e8aa
+		summarizeBy: none
+		sourceColumn: plan_organizado_de_suicidio
+
+		annotation SummarizationSetBy = Automatic
+
+	column antecedente_trastorno
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 22058891-6d82-40b2-b4c3-ee69093a8896
+		summarizeBy: none
+		sourceColumn: antecedente_trastorno
+
+		annotation SummarizationSetBy = Automatic
+
+	column trastorno_depresivo
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f40556a7-05cf-431b-9a62-af34486492ed
+		summarizeBy: none
+		sourceColumn: trastorno_depresivo
+
+		annotation SummarizationSetBy = Automatic
+
+	column trastorno_de_personalidad
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 56243dc1-12bb-4bec-ab72-4948a9399f27
+		summarizeBy: none
+		sourceColumn: trastorno_de_personalidad
+
+		annotation SummarizationSetBy = Automatic
+
+	column trastorno_bipolar
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 25d551c6-895e-4dbd-811c-47017f76eed1
+		summarizeBy: none
+		sourceColumn: trastorno_bipolar
+
+		annotation SummarizationSetBy = Automatic
+
+	column esquizofrenia
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4e6378d0-5ebb-4e58-bdd6-66c3dcf4b0c3
+		summarizeBy: none
+		sourceColumn: esquizofrenia
+
+		annotation SummarizationSetBy = Automatic
+
+	column antecedente_violencia_o_abuso
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 925e8162-2693-4aa9-a70f-93abfd247c75
+		summarizeBy: none
+		sourceColumn: antecedente_violencia_o_abuso
+
+		annotation SummarizationSetBy = Automatic
+
+	column abuso_de_alcohol
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: faed2530-d114-4756-9cf7-06dfe46a6c66
+		summarizeBy: none
+		sourceColumn: abuso_de_alcohol
+
+		annotation SummarizationSetBy = Automatic
+
+	column ahorcamiento
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bfca2fd8-7f0b-45e7-87d5-1ee3c8ec2b57
+		summarizeBy: none
+		sourceColumn: ahorcamiento
+
+		annotation SummarizationSetBy = Automatic
+
+	column arma_cortopunzante
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6d02cb55-4fc0-48e4-9e4a-9df47f5ec857
+		summarizeBy: none
+		sourceColumn: arma_cortopunzante
+
+		annotation SummarizationSetBy = Automatic
+
+	column arma_de_fuego
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4dbf08ef-d51c-4832-8765-68b4c0e13325
+		summarizeBy: none
+		sourceColumn: arma_de_fuego
+
+		annotation SummarizationSetBy = Automatic
+
+	column inmolacion
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8b142caf-a8a8-411b-ac2a-bd0d7ee68d92
+		summarizeBy: none
+		sourceColumn: inmolacion
+
+		annotation SummarizationSetBy = Automatic
+
+	column lanzamiento_al_vacio
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: acb30b89-8ee1-451f-bdc4-d9a839d8d843
+		summarizeBy: none
+		sourceColumn: lanzamiento_al_vacio
+
+		annotation SummarizationSetBy = Automatic
+
+	column lanzamiento_a_vehiculo
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8333ea56-cd68-4805-8d40-988d262b4c93
+		summarizeBy: none
+		sourceColumn: lanzamiento_a_vehiculo
+
+		annotation SummarizationSetBy = Automatic
+
+	column lanzamiento_al_agua
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: f59df0df-a21c-41d6-94aa-592231ae31cb
+		summarizeBy: none
+		sourceColumn: lanzamiento_al_agua
+
+		annotation SummarizationSetBy = Automatic
+
+	column intoxicaciones
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 87d8e508-c3a9-4a8e-8b59-91ef08094821
+		summarizeBy: none
+		sourceColumn: intoxicaciones
+
+		annotation SummarizationSetBy = Automatic
+
+	column remitido_a_psiquiatria
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6aff1959-5f86-4b34-bf06-de392e40e48b
+		summarizeBy: none
+		sourceColumn: remitido_a_psiquiatria
+
+		annotation SummarizationSetBy = Automatic
+
+	column remitido_a_psicologia
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 600114a0-a111-4e83-a5b1-7fd1b925b7c1
+		summarizeBy: none
+		sourceColumn: remitido_a_psicologia
+
+		annotation SummarizationSetBy = Automatic
+
+	column remitido_a_trabajo_social
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: fc48a252-0f50-412d-a54b-17178fa10849
+		summarizeBy: none
+		sourceColumn: remitido_a_trabajo_social
+
+		annotation SummarizationSetBy = Automatic
+
+	partition data_clean = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("D:\uttalento\da-project\data\data_clean.csv"),[Delimiter=",", Columns=49, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"", Int64.Type}, {"id_ano", Int64.Type}, {"fecha_de_notificacion_del", type date}, {"edad_de_la_victima", Int64.Type}, {"unidad_de_medida_de_la_victima", type text}, {"sexo", type text}, {"area_de_residencia", type text}, {"barrio_de_residencia", type text}, {"seguridad_social", type text}, {"estrato_socioeconomico", Int64.Type}, {"gestante", type text}, {"poblacion_a_cargo_icbf", type logical}, {"fecha_del_hecho", type date}, {"intentos_previos", type logical}, {"numero_de_intentos", Int64.Type}, {"estado_civil", type text}, {"escolaridad", type text}, {"conflicto_con_pareja_o_ex", type text}, {"enfermedad_cronica_dolorosa", type logical}, {"problemas_economicos", type logical}, {"muerte_de_un_familiar", type logical}, {"escolar_educativa", type logical}, {"problemas_juridicos", type logical}, {"suicidio_de_un_familiar", type logical}, {"maltrato_fisico_sicologico", type logical}, {"problemas_laborales", type logical}, {"problemas_familiares", type logical}, {"consumo_de_spa", type logical}, {"antecedentes_familiares_de", type logical}, {"ideacion_suicida_persistente", type logical}, {"plan_organizado_de_suicidio", type logical}, {"antecedente_trastorno", type logical}, {"trastorno_depresivo", type logical}, {"trastorno_de_personalidad", type logical}, {"trastorno_bipolar", type logical}, {"esquizofrenia", type logical}, {"antecedente_violencia_o_abuso", type logical}, {"abuso_de_alcohol", type logical}, {"ahorcamiento", type logical}, {"arma_cortopunzante", type logical}, {"arma_de_fuego", type logical}, {"inmolacion", type logical}, {"lanzamiento_al_vacio", type logical}, {"lanzamiento_a_vehiculo", type logical}, {"lanzamiento_al_agua", type logical}, {"intoxicaciones", type logical}, {"remitido_a_psiquiatria", type logical}, {"remitido_a_psicologia", type logical}, {"remitido_a_trabajo_social", type logical}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

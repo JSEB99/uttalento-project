@@ -1,0 +1,10 @@
+relationship 2b513b3d-3c16-4b4e-9d66-01253928bde0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_clean.fecha_de_notificacion_del
+	toColumn: LocalDateTable_556bfa54-f6b5-4f9d-887a-0cf2f88be7e2.Date
+
+relationship c8efc252-0b0e-43eb-a6a1-be066734dc1b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: data_clean.fecha_del_hecho
+	toColumn: LocalDateTable_e030f96f-a5b8-465a-bc91-cff483573b40.Date
+
