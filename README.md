@@ -82,7 +82,11 @@ Recopilar, analizar, y difundir informaion confiable  sensible,  característica
 ### Python
 
 1. Clonar el repositorio
-2. Generar un archivo `.env`, donde pondras la ruta que quieres para la salida de los datos, *por defecto (data/data_raw.csv)* y la *URL* de la API de los datos
+2. Generar un archivo `.env`, donde pondras la ruta que quieres para la salida de los datos, *por defecto (data/prjt_data.csv)* y la *URL* de la API de los datos
+
+> [!TIP]
+> El archivo de lectura csv debe llamarse **prjt_data.csv** para que funcione, en caso contrario, deberá modificarse la variable de entorno a su acomodo.
+
 3. Crear un ambiente virtual, en este caso se uso [uv](https://docs.astral.sh/uv/), sin embargo, no es necesario, lo importante es **instalar las dependencias que se especifican en el archivo `pyproject.toml`**
 4. Ejecutar `python etl.py`, *Esto descarga los datos con un nombre en especifico en data, luego los limpia y guarda los datos limpios en esa misma ubicación*
 
