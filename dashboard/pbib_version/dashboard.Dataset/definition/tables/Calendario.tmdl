@@ -1,0 +1,101 @@
+table Calendario
+	lineageTag: 4d3b8e3c-29ab-438f-aa9a-737d79715fa5
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 80060a1b-e9f4-499a-b8cb-2728c8e67cde
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Date]
+
+		variation Variación
+			isDefault
+			relationship: 665441ec-3f05-4fd6-b2f7-a63cf297777e
+			defaultHierarchy: LocalDateTable_b3f63bf0-1858-415c-91d0-1962bdc31e35.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año = YEAR(Calendario[Date])
+		dataType: int64
+		formatString: 0
+		lineageTag: 02374821-3b65-4389-aa66-0aac8ec7e1a8
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes = MONTH(Calendario[Date])
+		dataType: int64
+		formatString: 0
+		lineageTag: 42998f1c-f07e-4b16-b48b-3fcca1b60674
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dia = DAY(Calendario[Date])
+		dataType: int64
+		formatString: 0
+		lineageTag: 60129955-4406-49b1-a86b-06ed819523e1
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Dia de la semana' = WEEKDAY(Calendario[Date])
+		dataType: int64
+		formatString: 0
+		lineageTag: 7298f909-d88e-47f4-9a22-c5d776001a5a
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre Mes' =
+			CONCATENATE(
+			    UPPER(
+			        LEFT(
+			            FORMAT(Calendario[Date],"MMMM"),1
+			        )
+			    ),
+			    LOWER(
+			        MID(
+			            FORMAT(Calendario[Date],"MMMM"),2,LEN(FORMAT(Calendario[Date],"MMMM"))
+			        )
+			    )
+			)
+		dataType: string
+		lineageTag: 53cbdff1-2823-454e-ae92-2cbd58f730ee
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre dia de la semana' =
+			CONCATENATE(
+			    UPPER(
+			        LEFT(
+			            FORMAT(Calendario[Date],"dddd"),1
+			        )
+			    ),
+			    LOWER(
+			        MID(
+			            FORMAT(Calendario[Date],"dddd"),2,LEN(FORMAT(Calendario[Date],"dddd"))
+			        )
+			    )
+			)
+		dataType: string
+		lineageTag: 054c2bb7-13c1-4b59-8b07-71b5436b3ce9
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendario = calculated
+		mode: import
+		source = CALENDAR(FIRSTDATE(data_clean[Fecha del Hecho]),LASTDATE(data_clean[Fecha de Notificación]))
+
+	annotation PBI_Id = 6ecee65043d04a77bd0e60d75e762122
+

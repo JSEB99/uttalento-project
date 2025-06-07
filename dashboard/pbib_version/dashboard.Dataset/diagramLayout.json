@@ -16,10 +16,36 @@
           "nodeIndex": "data_clean",
           "nodeLineageTag": "406088c7-972a-469c-894b-2b048691489d",
           "size": {
-            "height": 300,
+            "height": 471,
+            "width": 256
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 317,
+            "y": 0
+          },
+          "nodeIndex": "Medidas",
+          "nodeLineageTag": "46b7e751-2ccc-450d-8266-963e1fcd7c93",
+          "size": {
+            "height": 104,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 410,
+            "y": 137
+          },
+          "nodeIndex": "Calendario",
+          "nodeLineageTag": "4d3b8e3c-29ab-438f-aa9a-737d79715fa5",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 3
         }
       ],
       "name": "Todas las tablas",

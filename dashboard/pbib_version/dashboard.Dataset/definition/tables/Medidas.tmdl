@@ -1,0 +1,59 @@
+table Medidas
+	lineageTag: 46b7e751-2ccc-450d-8266-963e1fcd7c93
+
+	measure ProblemasFamiliares = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Familiares] = TRUE())
+		formatString: 0
+		lineageTag: 2889a62c-4c02-40bc-bce3-4130d695296c
+
+	measure ProblemasJuridicos = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Jurídicos]=TRUE())
+		formatString: 0
+		lineageTag: 86d30b37-95fa-4199-aead-3e21b0dd1673
+
+	measure ProblemasLaborales = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Laborales]=TRUE())
+		formatString: 0
+		lineageTag: a9e91be0-a343-4329-8601-125097b6dee6
+
+	measure 'Total de Casos' = COUNT(data_clean[Fecha del Hecho])
+		formatString: 0
+		lineageTag: dd3e4cd3-060d-4341-9a06-2b1a557edb0f
+
+	measure 'Casos por fecha del Hecho' =
+			
+			CALCULATE(
+			    COUNTROWS('data_clean'),
+			    USERELATIONSHIP('data_clean'[Fecha del Hecho], 'Calendario'[Date])
+			)
+		formatString: 0
+		lineageTag: 1b720f07-2ca9-4abb-9fc0-bf4c89f9c22e
+
+	measure 'Casos por fecha de notificación' =
+			
+			CALCULATE(
+			    COUNTROWS('data_clean'),
+			    USERELATIONSHIP('data_clean'[Fecha de Notificación], 'Calendario'[Date])
+			)
+		formatString: 0
+		lineageTag: b0d20bec-22eb-4256-9833-3417ff487381
+
+	measure 'Promedio días entre hecho y notificación' =
+			
+			AVERAGEX(
+			    'data_clean',
+			    DATEDIFF('data_clean'[Fecha del Hecho], 'data_clean'[Fecha de Notificación], DAY)
+			)
+		lineageTag: 4888e242-0ef2-4383-9a90-0124ea8d3ca6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Medidas = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

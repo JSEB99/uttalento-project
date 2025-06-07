@@ -1,10 +1,14 @@
-relationship 2b513b3d-3c16-4b4e-9d66-01253928bde0
+relationship 665441ec-3f05-4fd6-b2f7-a63cf297777e
 	joinOnDateBehavior: datePartOnly
-	fromColumn: data_clean.fecha_de_notificacion_del
-	toColumn: LocalDateTable_556bfa54-f6b5-4f9d-887a-0cf2f88be7e2.Date
+	fromColumn: Calendario.Date
+	toColumn: LocalDateTable_b3f63bf0-1858-415c-91d0-1962bdc31e35.Date
 
-relationship c8efc252-0b0e-43eb-a6a1-be066734dc1b
-	joinOnDateBehavior: datePartOnly
-	fromColumn: data_clean.fecha_del_hecho
-	toColumn: LocalDateTable_e030f96f-a5b8-465a-bc91-cff483573b40.Date
+relationship 994b9644-641a-4ea8-b108-983f8c1b4689
+	fromColumn: data_clean.'Fecha de Notificación'
+	toColumn: Calendario.Date
+
+relationship 768e6b8c-0725-4f99-a559-e35d500d3260
+	isActive: false
+	fromColumn: data_clean.'Fecha del Hecho'
+	toColumn: Calendario.Date
 
