@@ -1,0 +1,73 @@
+table 'Medidas Métodos'
+	lineageTag: b77bbaf0-b404-45f4-842b-9d2fd77ff0fd
+
+	measure Ahorcamiento =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Ahorcamiento] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 4943d831-5ce2-4a32-8bcf-cc04968d5395
+
+	measure 'Arma Cortopunzante' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Arma Cortopunzante])
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: db9971f8-3849-45b5-9fbb-f1458ef98822
+
+	measure 'Arma de Fuego' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Arma de Fuego])
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: e417c0c6-f421-44c9-90a5-bfa0e8dad966
+
+	measure Inmolación =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Inmolación])
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 8bb23766-0c34-48ea-a98f-036d1282c479
+
+	measure Intoxicaciones =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Intoxicaciones])
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 2b529451-afa9-4b21-a067-769566779117
+
+	measure 'Lanzamiento a Vehículo' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Lanzamiento a Vehículo])
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 191574d6-6c40-43dc-8db5-0bce8c78428c
+
+	measure 'Lanzamiento al Agua' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Lanzamiento al Agua])
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: e5434155-e888-4ca2-b785-2e32c8f8f95c
+
+	measure 'Lanzamiento al Vacío' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Lanzamiento al Vacío])
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: eba14643-9664-4b06-bfc9-422bbae39c99
+
+	partition 'Medidas Métodos' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

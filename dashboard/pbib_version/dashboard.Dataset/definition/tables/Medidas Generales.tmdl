@@ -1,0 +1,84 @@
+table 'Medidas Generales'
+	lineageTag: 46b7e751-2ccc-450d-8266-963e1fcd7c93
+
+	measure 'Total de Casos' = COUNT(data_clean[Fecha del Hecho])
+		formatString: 0
+		lineageTag: dd3e4cd3-060d-4341-9a06-2b1a557edb0f
+
+	measure 'Casos por fecha del Hecho' =
+			
+			CALCULATE(
+			    COUNTROWS('data_clean'),
+			    USERELATIONSHIP('data_clean'[Fecha del Hecho], 'Calendario'[Date])
+			)
+		formatString: 0
+		lineageTag: 1b720f07-2ca9-4abb-9fc0-bf4c89f9c22e
+
+	measure 'Casos por fecha de notificación' =
+			
+			CALCULATE(
+			    COUNTROWS('data_clean'),
+			    USERELATIONSHIP('data_clean'[Fecha de Notificación], 'Calendario'[Date])
+			)
+		formatString: 0
+		lineageTag: b0d20bec-22eb-4256-9833-3417ff487381
+
+	measure 'Promedio días entre hecho y notificación' =
+			
+			AVERAGEX(
+			    'data_clean',
+			    DATEDIFF('data_clean'[Fecha del Hecho], 'data_clean'[Fecha de Notificación], DAY)
+			)
+		lineageTag: 4888e242-0ef2-4383-9a90-0124ea8d3ca6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Consumo SPA' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Consumo de SPA] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 36474097-6c96-4874-a311-4d5096ad7d21
+
+	measure 'Abuso Alcohol' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Abuso de Alcohol] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: b9b7aac8-70d3-4f21-bd06-4f6ec839aed3
+
+	measure ICBF =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Población a cargo del ICBF] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 16bc30be-2f87-4f18-a884-668d8f182d30
+
+	measure Gestante =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Gestante] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 8c366457-661d-4834-b53a-5ddaabc06210
+
+	measure Planeado =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Planificado] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: f7587583-b4cc-4d73-9f09-366199dd7315
+
+	partition 'Medidas Generales' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

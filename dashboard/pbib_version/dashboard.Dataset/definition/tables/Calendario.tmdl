@@ -70,6 +70,7 @@ table Calendario
 		lineageTag: 53cbdff1-2823-454e-ae92-2cbd58f730ee
 		summarizeBy: none
 		isDataTypeInferred
+		sortByColumn: Mes
 
 		annotation SummarizationSetBy = Automatic
 
@@ -90,6 +91,7 @@ table Calendario
 		lineageTag: 054c2bb7-13c1-4b59-8b07-71b5436b3ce9
 		summarizeBy: none
 		isDataTypeInferred
+		sortByColumn: 'Dia de la semana'
 
 		annotation SummarizationSetBy = Automatic
 

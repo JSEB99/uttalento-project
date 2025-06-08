@@ -23,19 +23,6 @@
         },
         {
           "location": {
-            "x": 317,
-            "y": 0
-          },
-          "nodeIndex": "Medidas",
-          "nodeLineageTag": "46b7e751-2ccc-450d-8266-963e1fcd7c93",
-          "size": {
-            "height": 104,
-            "width": 234
-          },
-          "zIndex": 2
-        },
-        {
-          "location": {
             "x": 410,
             "y": 137
           },
@@ -46,6 +33,56 @@
             "width": 234
           },
           "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 694,
+            "y": 183.5
+          },
+          "nodeIndex": "Medidas Métodos",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 978,
+            "y": 183.5
+          },
+          "nodeIndex": "Medidas Problemas",
+          "nodeLineageTag": "843af986-45e2-424a-bb65-dd5bc70fbcdc",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1262,
+            "y": 183.5
+          },
+          "nodeIndex": "Medidas Antecedentes & Trastornos",
+          "nodeLineageTag": "321421b9-a407-4076-86e8-b4cba036532f",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 317,
+            "y": 0
+          },
+          "nodeIndex": "Medidas Generales",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas las tablas",

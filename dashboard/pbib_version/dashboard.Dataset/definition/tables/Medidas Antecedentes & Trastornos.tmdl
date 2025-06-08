@@ -1,0 +1,85 @@
+table 'Medidas Antecedentes & Trastornos'
+	lineageTag: 321421b9-a407-4076-86e8-b4cba036532f
+
+	measure 'Antecedente de Violencia o Abuso' =
+			
+			VAR Total  = CALCULATE(COUNTROWS(data_clean), data_clean[Antecedente de Violencia o Abuso] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 6a1b1ed2-eafd-4cde-8ea7-3157f81d5e40
+
+	measure 'Antecedente Psiquiatrico' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Antecedente de Trastorno Psiquiátrico] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 937a3995-e8b8-40de-8d16-88a49315fffd
+
+	measure 'Antecedentes Familiares' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Antecedentes Familiares con conducto Suicida] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 723d4606-b97e-4777-856c-a167c1af46eb
+
+	measure Esquizofrenia =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Esquizofrenia] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: b412fdf7-612b-46a2-a766-51d18eaa471f
+
+	measure 'Maltrato Físico/Psicologíco' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Maltrato Fisico/Psicologíco])
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 8c2e6bba-c2e2-4dee-a984-96024277f262
+
+	measure 'Muerte de Familiar' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Muerte de Familiar] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 7a34e804-46f2-42d2-85fc-486e83068023
+
+	measure 'Suicidio de Familiar' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Suicidio de Familiar] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 70f41b48-ae73-4d63-8016-aa9ac47320ec
+
+	measure 'Trastorno Bipolar' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Trastorno Bipolar] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 23a0a20c-8a27-4858-91c1-1fda1e9f070e
+
+	measure 'Trastorno Depresivo' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Trastorno Depresivo] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 5acd8588-c636-4795-aa6e-ac841b3f2bee
+
+	measure 'Trastorno Personalidad' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Trastorno de Personalidad] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 286e8d0f-32f6-4d55-9d1f-1badb58945f0
+
+	partition 'Medidas Antecedentes & Trastornos' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+

@@ -6,7 +6,7 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["data_clean","Nombre del Archivo","Directorio del Archivo","Medidas"]
+annotation PBI_QueryOrder = ["data_clean","Nombre del Archivo","Directorio del Archivo","Medidas Generales","Medidas Métodos","Medidas Problemas","Medidas Antecedentes & Trastornos"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -16,7 +16,10 @@ annotation PBI_ProTooling = ["DevMode"]
 
 ref table data_clean
 ref table DateTableTemplate_f53a83c9-ebcd-465d-a3bf-3480f76ce87a
-ref table Medidas
+ref table 'Medidas Generales'
 ref table Calendario
 ref table LocalDateTable_b3f63bf0-1858-415c-91d0-1962bdc31e35
+ref table 'Medidas Métodos'
+ref table 'Medidas Problemas'
+ref table 'Medidas Antecedentes & Trastornos'
 

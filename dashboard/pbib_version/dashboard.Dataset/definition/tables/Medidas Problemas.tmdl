@@ -1,0 +1,50 @@
+table 'Medidas Problemas'
+	lineageTag: 843af986-45e2-424a-bb65-dd5bc70fbcdc
+
+	measure 'Problemas Económicos' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Económicos] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 84eb5eae-a554-492d-b3ff-3073bd819ee0
+
+	measure 'Problemas Familiares' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Familiares] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 2889a62c-4c02-40bc-bce3-4130d695296c
+
+	measure 'Problemas Jurídicos' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Jurídicos]=TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 86d30b37-95fa-4199-aead-3e21b0dd1673
+
+	measure 'Problemas Laborales' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Laborales]=TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: a9e91be0-a343-4329-8601-125097b6dee6
+
+	measure 'Conflictos de Pareja' =
+			
+			VAR Total = CALCULATE(COUNTROWS(data_clean), data_clean[Conflictos de Pareja] = TRUE())
+			RETURN IF(ISBLANK(Total), 0, Total)
+		formatString: 0
+		lineageTag: 594680da-8b04-414a-82f5-0a41bcc3a532
+
+	partition 'Medidas Problemas' = m
+		mode: import
+		source =
+				let
+				    Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Columna1 = _t]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(Origen,{{"Columna1", type text}}),
+				    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Columna1"})
+				in
+				    #"Columnas quitadas"
+
+	annotation PBI_ResultType = Table
+
