@@ -1,15 +1,15 @@
 table Medidas
 	lineageTag: 46b7e751-2ccc-450d-8266-963e1fcd7c93
 
-	measure ProblemasFamiliares = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Familiares] = TRUE())
+	measure 'Problemas Familiares' = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Familiares] = TRUE())
 		formatString: 0
 		lineageTag: 2889a62c-4c02-40bc-bce3-4130d695296c
 
-	measure ProblemasJuridicos = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Jurídicos]=TRUE())
+	measure 'Problemas Jurídicos' = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Jurídicos]=TRUE())
 		formatString: 0
 		lineageTag: 86d30b37-95fa-4199-aead-3e21b0dd1673
 
-	measure ProblemasLaborales = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Laborales]=TRUE())
+	measure 'Problemas Laborales' = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Laborales]=TRUE())
 		formatString: 0
 		lineageTag: a9e91be0-a343-4329-8601-125097b6dee6
 
@@ -44,6 +44,70 @@ table Medidas
 		lineageTag: 4888e242-0ef2-4383-9a90-0124ea8d3ca6
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Trastorno Depresivo' = CALCULATE(COUNTROWS(data_clean), data_clean[Trastorno Depresivo] = TRUE())
+		formatString: 0
+		lineageTag: 5acd8588-c636-4795-aa6e-ac841b3f2bee
+
+	measure 'Trastorno Bipolar' = CALCULATE(COUNTROWS(data_clean), data_clean[Trastorno Bipolar] = TRUE())
+		formatString: 0
+		lineageTag: 23a0a20c-8a27-4858-91c1-1fda1e9f070e
+
+	measure 'Trastorno Personalidad' = CALCULATE(COUNTROWS(data_clean), data_clean[Trastorno de Personalidad] = TRUE())
+		formatString: 0
+		lineageTag: 286e8d0f-32f6-4d55-9d1f-1badb58945f0
+
+	measure 'Antecedente Psiquiatrico' = CALCULATE(COUNTROWS(data_clean), data_clean[Antecedente de Trastorno Psiquiátrico] = TRUE())
+		formatString: 0
+		lineageTag: 937a3995-e8b8-40de-8d16-88a49315fffd
+
+	measure 'Consumo SPA' = CALCULATE(COUNTROWS(data_clean), data_clean[Consumo de SPA] = TRUE())
+		formatString: 0
+		lineageTag: 36474097-6c96-4874-a311-4d5096ad7d21
+
+	measure 'Abuso Alcohol' = CALCULATE(COUNTROWS(data_clean), data_clean[Abuso de Alcohol] = TRUE())
+		formatString: 0
+		lineageTag: b9b7aac8-70d3-4f21-bd06-4f6ec839aed3
+
+	measure 'Antecedentes Familiares' = CALCULATE(COUNTROWS(data_clean), data_clean[Antecedentes Familiares con conducto Suicida] = TRUE())
+		formatString: 0
+		lineageTag: 723d4606-b97e-4777-856c-a167c1af46eb
+
+	measure 'Problemas Económicos' = CALCULATE(COUNTROWS(data_clean), data_clean[Problemas Económicos] = TRUE())
+		formatString: 0
+		lineageTag: 84eb5eae-a554-492d-b3ff-3073bd819ee0
+
+	measure ICBF = CALCULATE(COUNTROWS(data_clean), data_clean[Población a cargo del ICBF] = TRUE())
+		formatString: 0
+		lineageTag: 16bc30be-2f87-4f18-a884-668d8f182d30
+
+	measure 'Conflictos de Pareja' = CALCULATE(COUNTROWS(data_clean), data_clean[Conflictos de Pareja] = TRUE())
+		formatString: 0
+		lineageTag: 594680da-8b04-414a-82f5-0a41bcc3a532
+
+	measure 'Antecedente de Violencia o Abuso' = CALCULATE(COUNTROWS(data_clean), data_clean[Antecedente de Violencia o Abuso] = TRUE())
+		formatString: 0
+		lineageTag: 6a1b1ed2-eafd-4cde-8ea7-3157f81d5e40
+
+	measure Esquizofrenia = CALCULATE(COUNTROWS(data_clean), data_clean[Esquizofrenia] = TRUE())
+		formatString: 0
+		lineageTag: b412fdf7-612b-46a2-a766-51d18eaa471f
+
+	measure 'Suicidio de Familiar' = CALCULATE(COUNTROWS(data_clean), data_clean[Suicidio de Familiar] = TRUE())
+		formatString: 0
+		lineageTag: 70f41b48-ae73-4d63-8016-aa9ac47320ec
+
+	measure Gestante = CALCULATE(COUNTROWS(data_clean), data_clean[Gestante] = TRUE())
+		formatString: 0
+		lineageTag: 8c366457-661d-4834-b53a-5ddaabc06210
+
+	measure 'Muerte de Familiar' = CALCULATE(COUNTROWS(data_clean), data_clean[Muerte de Familiar] = TRUE())
+		formatString: 0
+		lineageTag: 7a34e804-46f2-42d2-85fc-486e83068023
+
+	measure Planeado = CALCULATE(COUNTROWS(data_clean), data_clean[Planificado] = TRUE())
+		formatString: 0
+		lineageTag: f7587583-b4cc-4d73-9f09-366199dd7315
 
 	partition Medidas = m
 		mode: import
