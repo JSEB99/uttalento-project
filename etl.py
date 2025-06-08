@@ -107,10 +107,8 @@ def renombrar_columnas(df: pd.DataFrame) -> pd.DataFrame:
 def eliminar_columnas(df: pd.DataFrame) -> pd.DataFrame:
     try:
         columnas_a_eliminar = ["intentos_previos",
-                               "id_ano", "unidad_de_medida_de_la_victima"]
-        columnas_existentes = [
-            col for col in columnas_a_eliminar if col in df.columns]
-        df.drop(columns=columnas_existentes, inplace=True)
+                               "id_ano", "unidad_de_medida_de_la_victima", "escolar_educativa"]
+        df.drop(columns=columnas_a_eliminar, inplace=True)
     except Exception as e:
         raise Exception(f"[eliminar_columnas] Error al eliminar columnas: {e}")
     return df
