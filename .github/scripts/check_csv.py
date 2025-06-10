@@ -4,7 +4,7 @@ import os
 
 COLUMNAS_REQUERIDAS = {
     'id_ano', 'fecha_de_notificacion_del', 'edad_de_la_victima',
-    'unidad_de_medida_de_la_victima,sexo', 'area_de_residencia', 'barrio_de_residencia',
+    'unidad_de_medida_de_la_victima', 'sexo', 'area_de_residencia', 'barrio_de_residencia',
     'seguridad_social', 'estrato_socioeconomico', 'gestante', 'poblacion_a_cargo_icbf',
     'fecha_del_hecho', 'intentos_previos', 'numero_de_intentos', 'estado_civil',
     'escolaridad', 'conflicto_con_pareja_o_ex', 'enfermedad_cronica_dolorosa',

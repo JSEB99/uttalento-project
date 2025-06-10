@@ -7,6 +7,8 @@
 ## 👥 Integrantes
 
 - Juan Sebastian Mora Tibamoso
+- Ana Dorcinda Cuervo
+- Sonia Patricia Galvis
 
 ## Objetivo
 
