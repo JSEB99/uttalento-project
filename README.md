@@ -8,7 +8,7 @@
 
 - Juan Sebastian Mora Tibamoso
 - Ana Dorcinda Cuervo
-- Sonia Patricia Galvis
+- Sonia Patricia Galvis Lizarazo
 
 ## Objetivo
 
@@ -24,6 +24,7 @@ Recopilar, analizar, y difundir informaion confiable  sensible,  característica
 
 - Python
 - Power BI
+- Google Docss
 
 ---
 
